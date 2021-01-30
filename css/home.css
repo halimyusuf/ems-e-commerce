@@ -1,0 +1,81 @@
+.navbar {
+    padding: 0 30px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo-desc-cont {
+    padding: 2px;
+    background-color: #FF7A00;
+}
+
+.logo-desc {
+    font-size: 2.5em;
+    color: #FFE9D6;
+}
+
+.nav-right li{
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 0 10px;
+}
+
+.millenial-store-adv {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.millenial-store-text {
+    font-size: 2.5em;
+    color: #FF7A00;
+    margin-top: 20vh; 
+}
+
+.millenial-store-text div{
+    margin:0 5px ;
+}
+
+.millenial-store-img img{
+    width: 600px
+}
+
+
+
+@media screen and (max-width: 450px) {
+    
+.logo-desc {
+    font-size: 2em;
+}
+
+.nav-right li{
+    font-size: 1.2em;
+    padding: 0 2px;
+}
+
+.millenial-store-text {
+    position: absolute;
+    display: flex;
+    word-wrap: wrap;
+    z-index: 10;
+    font-size: 1.6em;
+    bottom: 0;
+    padding: 2px;
+    color: #FFE9D6;
+    background-color: #FF7A00;
+}
+
+
+.millenial-store-img img{
+    width: 90vw;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+}
+
+
