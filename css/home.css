@@ -19,6 +19,29 @@
     color: #FFE9D6;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-cart {
+    margin-left: 10px;
+    border-radius: 15px;
+    background-color: #FF7A00;
+    padding: 3px 9px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.nav-cart-no {
+    padding: 0 2px;
+}
+
+.nav-right img {
+    width: 25px;
+}
+
 .nav-right li{
     display: inline-block;
     font-size: 1.5em;
@@ -45,6 +68,111 @@
     width: 600px
 }
 
+.millenial-show-now-action-btn  {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.millenial-show-now-action-btn div {
+    padding: 15px 50px;
+    background-color: #FF7A00;
+    max-width: 200px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+}
+
+.millenial-show-now-action-btn div a {
+    text-decoration: none;
+    color: #FFE9D6;
+
+}
+
+.store-desc-wrap {
+    margin: 30px 0 0 0;
+}
+
+.store-desc {
+    word-wrap: break-word;
+    width: 100vw;
+    background-color: rgb(46, 42, 38);
+    left: 0;
+    color: white;
+}
+
+.store-desc div {
+    padding: 40px 15vw;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: larger;
+}
+
+.store-item-header {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.store-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    margin: 25px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px
+}
+
+.product-label {
+    padding: 8px 0;
+    font-size: x-large;
+}
+
+.product button {
+    width: 250px;
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    outline-style: none;
+    font-weight: 500;
+    background-color: #FF7A00;
+}
+
+.product button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+.product img{
+    max-width: 250px;
+}
+
+.footer {
+    color: white;
+    margin-top: 50px;
+    padding: 0 5vw;
+    height: 100px;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer .logo-desc {
+    color: black;
+}
+
+.copyright {
+    font-size: large !important;
+}
 
 
 @media screen and (max-width: 450px) {
@@ -64,7 +192,7 @@
     word-wrap: wrap;
     z-index: 10;
     font-size: 1.6em;
-    bottom: 0;
+    top: 0;
     padding: 2px;
     color: #FFE9D6;
     background-color: #FF7A00;
@@ -74,8 +202,26 @@
 .millenial-store-img img{
     width: 90vw;
     opacity: 0.8;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+.millenial-show-now-action-btn div {
+    padding: 10px 15px;
+    font-size: normal;
+}
+
+
+.store-desc div {
+    padding: 40px 10vw;
+    text-align: center;
+    font-size: normal;
+}
+
+.store-item-header {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 }
 
 
