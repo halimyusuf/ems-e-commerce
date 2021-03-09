@@ -16,23 +16,31 @@
                 <div class="nav-left">
                     <div class="logo-desc-cont">
                         <div class="logo-desc">
-                            EMS
+                            <a href="#">
+                                EMS
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="nav-right">
-                    <ul>
-                        <li>
+                <div class="nav-mid">
+                    <div>
+                        <a href="#millenial-intro">
                             <div class="nav-btn">Intro</div>
-                        </li>
-                        <li>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#about">
                             <div class="nav-btn">About</div>
-                        </li>
-                        <li>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#shopping">
                             <div class="nav-btn">Shop</div>
-                        </li>
-                    </ul>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="nav-end">
                     <div class="nav-cart">
                         <img src="assets/Images/cart.svg" alt="">
                         <div class="nav-cart-no">0</div>
@@ -43,7 +51,7 @@
         </nav>
     </div>
 
-    <div class="millenial-store-adv">
+    <div id="millenial-intro" class="millenial-store-adv">
         <div class="millenial-store-text">
             <div>THE</div>
             <div>MILLENIAL</div>
@@ -57,11 +65,11 @@
 
     <div class="millenial-show-now-action-btn">
         <div>
-            <a href="#">SHOP NOW</a>
+            <a href="#shopping">SHOP NOW</a>
         </div>
     </div>
 
-    <div class="store-desc-wrap">
+    <div id="about" class="store-desc-wrap">
         <div class="store-desc">
             <div>
                 E-Millenial store is an hypothetical online store for gadgets, we believe every 'Millenial' or 'Gen-Z'
@@ -71,75 +79,32 @@
         </div>
     </div>
 
-    <div class="store-item-header">
+    <div id="shopping" class="store-item-header">
         OUR GADGETS
     </div>
 
     <div class="store-items">
         <div class="product">
-            <div>
-                <img src="assets/images/product1.png" alt="product1">
+            <div class="product-item-view">
+                <div class="item-price-cont">
+                    <div class="item-price-label">
+                        <p>Price</p>
+                    </div>
+                    <p class="item-price">50,000</p>
+                </div>
+                <img src="" alt="">
             </div>
             <div class="product-label">
-                SAMSUNG TV
+
             </div>
-            <div><button>ADD TO CART</button></div>
+            <div><button></button></div>
         </div>
 
-        <div class="product">
-            <div>
-                <img src="assets/images/product2.png" alt="product2">
-            </div>
-            <div class="product-label">
-                PIXEL 4a
-            </div>
-            <div><button>ADD TO CART</button></div>
-        </div>
-
-        <div class="product">
-            <div>
-                <img src="assets/images/product3.png" alt="product3">
-            </div>
-            <div class="product-label">
-                PS 5
-            </div>
-            <div><button>ADD TO CART</button></div>
-        </div>
-
-        <div class="product">
-            <div>
-                <img src="assets/images/product4.png" alt="product4">
-            </div>
-            <div class="product-label">
-                MACBOOK AIR
-            </div>
-            <div><button>ADD TO CART</button></div>
-        </div>
-
-        <div class="product">
-            <div>
-                <img src="assets/images/product5.png" alt="product5">
-            </div>
-            <div class="product-label">
-                APPLE WATCH
-            </div>
-            <div><button>ADD TO CART</button></div>
-        </div>
-
-        <div class="product">
-            <div>
-                <img src="assets/images/product6.png" alt="product6">
-            </div>
-            <div class="product-label">
-                AIR PODS
-            </div>
-            <div><button>ADD TO CART</button></div>
-        </div>
     </div>
 
-    <div class="shopping-cart">
+    <!-- <div class="shopping-cart">
 
-    </div>
+    </div> -->
 
     <div class="footer">
         <div class="logo-desc-cont">
@@ -153,6 +118,99 @@
         </div>
     </div>
 
+    <div class="modal">
+
+        <div class="modal-content">
+            <div class="on-successful-payment">
+                <div>
+                    <h2> Thanks you, <span class="user-purchased"></span>, your order has been received </h2>
+                </div>
+                <div><img src="assets/Images/check.svg" alt=""></div>
+                <div class="item-purchased-summary">
+                    <div>
+                        <h1>Summary</h1>
+                    </div>
+                    <div class="item-purchased">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody class="items-section-data-checkout">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="item-purchased-ok">
+                    <button>Ok</button>
+                </div>
+            </div>
+            <div class="shopping-cart">
+                <div class="items-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="items-section-data">
+
+                        </tbody>
+                    </table>
+
+                    <div class="checkout-form">
+                        <form action="">
+                            <div class="checkout-form-cont">
+                                <div>
+                                    <input name="name" type="text" placeholder="Your Name">
+                                </div>
+                                <div>
+                                    <input name="email" type="text" placeholder="Your Email">
+                                </div>
+                                <div>
+                                    <input name="phone" type="text" placeholder="Your Phone Number">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="checkout-summary">
+                        <div>
+                            <h3>Total Amount to be paid</h3>
+                        </div>
+                        <div>
+                            <h2>0</h2>
+                        </div>
+                    </div>
+
+                    <div class="checkout-action">
+                        <div>
+                            <button>
+                                Continue Shopping
+                            </button>
+
+                            <button class="checkout-btn">
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/shopping-cart.js"></script>
 </body>
 
 </html>
