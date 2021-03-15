@@ -15,6 +15,23 @@ const formData = {
   phone: '',
 };
 
+// initialized to false for all 3 states
+const isFormValid = [false, false, false];
+
+const inputDetails = {
+  name: 'name-val',
+  email: 'email-val',
+  phone: 'phone-val',
+};
+const emailRe = /^[^\s@]+@[^\s@]+$/;
+const phoneRe = /^[1-9]{1}[0-9]{3,14}$/;
+
+const validations = {
+  name: (a) => !!a || 'Name is required',
+  email: (a) => emailRe.test(a) || 'Please enter a valid mail',
+  phone: (a) => phoneRe.test(a) || 'Please enter a valid phone number',
+};
+
 shoppingCart.addEventListener('click', () => {
   modal.style.display = 'block';
   let count = 1;
@@ -33,7 +50,7 @@ shoppingCart.addEventListener('click', () => {
     // second column
     temp[1].textContent = cart[a].name;
     // third column
-    temp[2].textContent = `$${cart[a].price.toLocaleString()}`;
+    temp[2].textContent = `₦${cart[a].price.toLocaleString()}`;
     // update total price
     total += cart[a].price * cart[a].quantity;
     // fourth column
@@ -103,7 +120,7 @@ document
   });
 
 function parseAmount(price) {
-  price = price.replaceAll('$', '');
+  price = price.replaceAll('₦', '');
   price = price.replaceAll(',', '');
   price = parseFloat(price);
   return price;
@@ -113,7 +130,7 @@ function updateTotalPrice(amount) {
   let price = totalAmt.textContent;
   price = parseAmount(price);
   price += amount;
-  totalAmt.textContent = `$${price.toLocaleString()}`;
+  totalAmt.textContent = `₦${price.toLocaleString()}`;
 }
 
 function closeModal() {
@@ -125,18 +142,32 @@ function closeModal() {
 }
 
 // input events
-for (let a in formData) {
+for (let i = 0; i < 3; i++) {
+  const a = Object.keys(formData)[i];
   document
     .querySelector(`input[name=${a}]`)
     .addEventListener('change', (event) => {
       formData[a] = event.target.value;
+      const vd = validations[a](event.target.value);
+      const currInp = document.querySelector('#' + inputDetails[a]);
+      if (!(vd === true)) {
+        currInp.textContent = vd;
+        isFormValid[i] = false;
+      } else {
+        currInp.textContent = '';
+        isFormValid[i] = true;
+      }
     });
 }
 
 document.querySelector('.checkout-btn').addEventListener('click', () => {
-  console.log(formData);
-  closeModal();
-  payWithPaystack();
+  const formValid = isFormValid.reduce((a, b) => a && b, true);
+  if (formValid) {
+    closeModal();
+    payWithPaystack();
+  } else {
+    alert('Please fill the checkout form.');
+  }
 });
 
 document.querySelector('.item-purchased-ok').addEventListener('click', () => {
@@ -176,7 +207,7 @@ function payWithPaystack() {
   var handler = PaystackPop.setup({
     key: 'pk_test_3bdb6f21126495dd4a554561943b4ba145859586', // Replace with your public key
     email: formData.email,
-    amount: totalAmount, // the amount value is multiplied by 100 to convert to the lowest currency unit
+    amount: totalAmount * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
     currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
     ref: String(Date.now()), // Replace with a reference you generated
     callback: function (response) {

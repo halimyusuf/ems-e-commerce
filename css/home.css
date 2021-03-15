@@ -380,6 +380,11 @@ table th {
     padding: 3px 2px;
 }
 
+.checkout-form-cont .danger {
+    color: red;
+    display: block;
+}
+
 .checkout-form-cont div {
     padding: 5px 0;
 }

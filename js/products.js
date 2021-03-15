@@ -4,7 +4,7 @@ var products = [
     id: 'p1',
     name: 'Samsung TV',
     img: 'product1.png',
-    price: 500000,
+    price: 90000,
   },
   {
     index: 2,
