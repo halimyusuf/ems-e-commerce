@@ -85,7 +85,11 @@ shoppingCart.addEventListener('click', () => {
     temp[3].appendChild(qty);
 
     const remBtn = document.createElement('button');
-    remBtn.textContent = 'Remove';
+    if (window.innerWidth < '500') {
+      remBtn.textContent = 'X';
+    } else {
+      remBtn.textContent = 'Remove';
+    }
     remBtn.classList = ['cart-item-rem-btn'];
     remBtn.addEventListener('click', () => {
       itemSectionData.removeChild(document.querySelector(`#cart-item-${a}`));
@@ -162,9 +166,11 @@ for (let i = 0; i < 3; i++) {
 
 document.querySelector('.checkout-btn').addEventListener('click', () => {
   const formValid = isFormValid.reduce((a, b) => a && b, true);
-  if (formValid) {
+  if (formValid && Object.keys(cart).length !== 0) {
     closeModal();
     payWithPaystack();
+  } else if (Object.keys(cart).length === 0) {
+    alert('Cart is empty, please select a product to purchase');
   } else {
     alert('Please fill the checkout form.');
   }
